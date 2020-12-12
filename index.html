@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Guess the Number</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Guess the Number 🔢</h1>
+      <p id="info">
+        Click me for rules and more info <i class="fas fa-info-circle"></i>
+      </p>
+      <div class="modal-holder hidden">
+        <h3>Rules</h3>
+        <span class="close-window">&times;</span>
+        <p>
+          On the beginning of the game random number is generated, in the range
+          from 1 to 100(included). Player has maximum of 10 attempts to guess
+          it. For every attempt player gets a hint: ' To low ' or ' To-high '.
+          Also, players previous attempts and remaining number of attempts are
+          displayed.
+        </p>
+        <p>
+          Click ' &times; ', ' Esc ' or anywhere outside this message to close
+          it
+        </p>
+        <h3>Enjoy the Game!</h3>
+      </div>
+      <div class="modal-background hidden"></div>
+      <main>
+        <input
+          id="user-input"
+          type="text"
+          placeholder="Enter your guess..."
+          autofocus
+        />
+        <button id="btn">Submit Guess</button>
+        <div class="guesses">
+          <h3>Previous Guesses</h3>
+          <div class="bgd"><p id="previous-guesses"></p></div>
+          <h3>Remaining Guesses</h3>
+          <div class="bgd"><p id="remaining-guesses"></p></div>
+        </div>
+        <div class="high-low">
+          <h2 id="high-or-low"></h2>
+        </div>
+      </main>
+    </div>
+    <audio src="sounds/guess.ogg" id="guess-tone"></audio>
+    <audio src="sounds/lost-game.wav" id="lost-tone"></audio>
+    <audio src="sounds/won-game.wav" id="win-tone"></audio>
+    <script src="script.js"></script>
+  </body>
+</html>

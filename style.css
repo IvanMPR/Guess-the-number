@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f4f4f4;
+  text-align: center;
+  position: relative;
+}
+/* Class for hide/show the rules modal */
+.hidden {
+  display: none !important;
+}
+/* Dark modal background */
+.modal-background {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.8);
+  z-index: 2;
+}
+/* Modal body */
+.modal-holder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f4f4f4;
+  width: 35vw;
+  height: 35vh;
+  color: #333;
+  z-index: 3;
+  display: grid;
+  place-content: center;
+  padding: 0.25vw;
+}
+/* Modal elements - h3 */
+.modal-holder h3 {
+  padding: 0.4vw;
+  font-size: 1.2vw;
+  text-shadow: 1px 1px 3px rgba(51, 51, 51, 0.2);
+}
+/* Modal elements - p */
+.modal-holder p {
+  padding: 0.6vw;
+  font-size: 0.9vw;
+  text-shadow: 1px 1px 3px rgba(21, 51, 51, 0.2);
+  font-weight: 500;
+}
+/* Modal elements - X */
+.modal-holder .close-window {
+  position: absolute;
+  top: 5%;
+  left: 95%;
+  font-size: 1.5vw;
+}
+
+.modal-holder .close-window:hover {
+  color: red;
+  text-shadow: 1px 1px 3px rgba(21, 51, 51, 0.2);
+  font-weight: bold;
+  cursor: pointer;
+}
+/* Div containig all elements */
+.container {
+  width: 70%;
+  height: 100%;
+  margin: auto;
+  box-shadow: 0px 0px 5px 5px rgba(46, 29, 29, 0.2);
+  border-left: #333 1px solid;
+  border-right: #333 1px solid;
+  background-color: #0093e9;
+  background-image: linear-gradient(-45deg, #0093e9 0%, #80d0c7 100%);
+}
+/* Heading title */
+h1 {
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(51, 51, 51, 0.5);
+  font-size: 1.8vw;
+  padding: 1vw;
+}
+/* Rules paragraph/link */
+p#info {
+  color: white;
+  font-size: 1vw;
+  text-shadow: 2px 2px 4px rgba(51, 51, 51, 0.5);
+  transition: all 0.2s ease;
+  /* Display inline because of the click area. If displayed block, clickable area is 100% width of the p#info parent */
+  display: inline;
+}
+
+p#info:hover {
+  text-shadow: 2px 2px 4px rgba(51, 51, 51, 1);
+  cursor: pointer;
+  color: #f4f4f4;
+}
+/* Main game body */
+main {
+  width: 50vw;
+  height: 55vh;
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0.15vw solid #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Input */
+main #user-input {
+  padding: 0.8vw;
+  margin: 1vw 0.5vw 0.5vw 0.5vw;
+  width: 50%;
+  font-size: 1vw;
+  text-align: center;
+}
+
+main #user-input::placeholder {
+  font-family: 'Open Sans', sans-serif;
+}
+
+main #user-input:focus {
+  outline: 0.15vw solid#0472b3;
+  outline-offset: -0.22vw;
+}
+/* Button */
+main #btn {
+  padding: 0.5vw 1vw;
+  margin: 0.5vw;
+  cursor: pointer;
+  background: #0472b3;
+  color: white;
+  font-size: 1vw;
+  border: black 0.15vw solid;
+}
+
+main #btn:hover {
+  background: #055786;
+  color: #f4f4f4;
+}
+/* Div containig previous guesses and remaining number of guesses */
+main div.guesses {
+  margin: 0.5vw;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Styling of two .bgd divs  */
+main div.guesses div.bgd {
+  background: #0472b3;
+  font-size: 1.2vw;
+  width: 70%;
+  height: 2.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.15vw solid #333;
+}
+/* H3 titles 'Previous guesses' and 'Remainig gueses' */
+main div.guesses h3 {
+  margin-top: 0.5vw;
+  font-size: 1.2vw;
+  color: white;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(51, 51, 51, 0.5);
+}
+/* Inner text of .bgd divs */
+p#previous-guesses,
+p#remaining-guesses {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(51, 51, 51, 0.5);
+}
+/* Lowest white div/stripe displaying game info  */
+main div.high-low {
+  margin-top: 1vw;
+  width: 100%;
+  background: white;
+  height: 3vw;
+  display: grid;
+  place-content: center;
+}
+/* Text inside white div/stripe */
+main div.high-low h2 {
+  font-size: 1.4vw;
+  color: #055786;
+  text-shadow: 2px 2px 4px rgba(51, 51, 51, 0.3);
+}
