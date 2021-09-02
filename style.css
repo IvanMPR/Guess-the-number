@@ -16,7 +16,7 @@ body {
   text-align: center;
   position: relative;
 }
-/* Class for hide/show the rules modal */
+/**** Class for hide/show the rules modal ****/
 .hidden {
   display: none !important;
 }
